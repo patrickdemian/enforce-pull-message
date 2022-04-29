@@ -8632,7 +8632,7 @@ async function main() {
         const body = (_a = github.context.payload.pull_request) === null || _a === void 0 ? void 0 : _a.body;
         if (!body) {
             core.info("description was null");
-            throw new Error("Action must be set for PRs only");
+            throw new Error("Could not find Asana link nor 'FIRE' in description.");
         }
         core.info("description found");
         if (ASANA_REGEX.test(body)) {
